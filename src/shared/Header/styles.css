@@ -1,0 +1,33 @@
+.Header {
+    width: 100%;
+    padding: 60px 186px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+.Row {
+    position: relative;
+    height: 71px;
+
+    box-sizing: border-box;
+    padding: 10px 65px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(0deg, #2B0077, #2B0077);
+    border-radius: 10px;
+}
+
+.LogoWrapper {
+    position: absolute;
+    left: -60px;
+}
+
+.Text {
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF;
+}

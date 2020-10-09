@@ -12,7 +12,7 @@ const PageLayout = (props) => {
 
     return (
         <Aux>
-            <div className='content'>
+            <div className={classes.Content}>
                 <Header modalHandler={props.modalHandler} />
                 <div  >
                     {props.children}

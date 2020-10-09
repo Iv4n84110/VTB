@@ -20,18 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b89c41-bcee-4e33-a2e8-2b682886b2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/shared/Modal/Backdrop/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Modal/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/Button.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Header/Logo/Logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Header/Logo/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Header/Logo/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Header/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Auxiliary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Auxiliary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/SignIn/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/SignIn/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/SignIn/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/SignIn/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Footer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Modal/Backdrop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Modal/Backdrop/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Modal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Modal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Modal/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/PageLayout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/PageLayout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/PageLayout/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/PageLayout/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,25 +62,48 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/shared/Header/LoginButton" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ivan\proj\vtb\src\pages" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ivan\proj\vtb\src" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ivan\proj\vtb\src\shared\Header\LoginButton" />
+      <recent name="C:\Users\Ivan\proj\vtb\src\shared\Header\Logo" />
+      <recent name="C:\Users\Ivan\proj\vtb\src\pages\Main\SignIn\img" />
+      <recent name="C:\Users\Ivan\proj\vtb\src\pages" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.server">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="eject" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="eject" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -93,6 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.server" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.eject" />
       </list>
@@ -107,7 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602185562741</updated>
       <workItem from="1602185564430" duration="5284000" />
-      <workItem from="1602227085968" duration="12248000" />
+      <workItem from="1602227085968" duration="26939000" />
     </task>
     <servers />
   </component>
@@ -131,21 +161,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="725" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602229522024" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602193207113">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602252053157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602193207113" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602193207112">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602252053157" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602252053157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602193207112" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602193207112">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602252053157" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602252053157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602193207112" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602193207113">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602252053157" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602252053157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602193207113" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602252053157" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602263659333">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602263659333" />
   </component>
 </project>

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Modal from "../../shared/Modal";
 import Aux from "../../hoc/Auxiliary";
 import PageLayout from "../../shared/PageLayout";
+import SignIn from "./SignIn";
 
 const Main = () => {
     const [modal, setModal] = useState(false);
@@ -17,6 +18,7 @@ const Main = () => {
     return (
         <PageLayout modalHandler={openModal}>
             <Modal show={modal}  modalClosed={closeModal}>
+                <SignIn modalClosed={closeModal}/>
             </Modal>
             <div>main</div>
         </PageLayout>
