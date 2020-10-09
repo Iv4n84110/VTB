@@ -6,7 +6,7 @@ const LoginButton = (props) => {
 
     return (
         <button onClick={props.modalHandler} className={classes.LoginButton}>
-            {props.children}
+            <span className={classes.ButtonText}>{props.children}</span>
         </button>
 
     )

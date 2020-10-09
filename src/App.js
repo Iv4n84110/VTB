@@ -2,8 +2,6 @@ import React from 'react';
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Main, User, Page404} from './pages';
-import PageLayout from "./shared/PageLayout";
-
 
 function App() {
     return (
@@ -11,7 +9,7 @@ function App() {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Main}/>
-                    <Route exact path="/user" component={User}/>
+                    <Route exact path="/user/:params" component={User}/>
                     <Route component={Page404}/>
                 </Switch>
             </BrowserRouter>

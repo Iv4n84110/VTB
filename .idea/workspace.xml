@@ -20,23 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b89c41-bcee-4e33-a2e8-2b682886b2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/Button.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Header/Logo/Logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Header/Logo/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Header/Logo/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Header/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Offers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Offers/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Transfer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Transfer/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/img/User.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Main/SignIn/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/SignIn/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Main/SignIn/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/SignIn/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Modal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Modal/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Header/LoginButton/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Header/LoginButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Header/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/PageLayout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/PageLayout/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/PageLayout/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/PageLayout/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1iboH56q9MajK0exnsGcRWXS7Nk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,7 +67,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/shared/Header/LoginButton" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/User/Content/Sidebar/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -72,10 +77,11 @@
       <recent name="C:\Users\Ivan\proj\vtb\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ivan\proj\vtb\src\pages\User\Content\Sidebar\img" />
+      <recent name="C:\Users\Ivan\proj\vtb\src\pages\User\Content\Sections\Offers" />
+      <recent name="C:\Users\Ivan\proj\vtb\src\pages\User\Content\Sections\Transfer" />
       <recent name="C:\Users\Ivan\proj\vtb\src\shared\Header\LoginButton" />
       <recent name="C:\Users\Ivan\proj\vtb\src\shared\Header\Logo" />
-      <recent name="C:\Users\Ivan\proj\vtb\src\pages\Main\SignIn\img" />
-      <recent name="C:\Users\Ivan\proj\vtb\src\pages" />
     </key>
   </component>
   <component name="RunManager" selected="npm.server">
@@ -137,7 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602185562741</updated>
       <workItem from="1602185564430" duration="5284000" />
-      <workItem from="1602227085968" duration="26939000" />
+      <workItem from="1602227085968" duration="43183000" />
     </task>
     <servers />
   </component>

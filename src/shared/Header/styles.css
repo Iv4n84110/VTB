@@ -1,6 +1,6 @@
 .Header {
     width: 100%;
-    padding: 60px 186px;
+    padding: 60px 10%;
     position: relative;
     box-sizing: border-box;
 }
@@ -14,7 +14,7 @@
     padding: 10px 65px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     background: linear-gradient(0deg, #2B0077, #2B0077);
@@ -23,11 +23,22 @@
 
 .LogoWrapper {
     position: absolute;
-    left: -60px;
+    left: -50px;
 }
 
 .Text {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 27px;
     color: #FFFFFF;
+}
+
+@media (min-width: 600px) {
+    .Text {
+        font-size: 20px;
+
+    }
+
+    .Row {
+        justify-content: space-between;
+    }
 }

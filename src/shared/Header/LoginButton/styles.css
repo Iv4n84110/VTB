@@ -2,10 +2,6 @@
     font-size: 20px;
     line-height: 27px;
     background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
     color: #FFFFFF;
     position: relative;
 }
@@ -13,10 +9,27 @@
 .LoginButton::before {
     content: "";
     position: absolute;
-    left: -50px;
-    top: -5px;
+    left: 0px;
+    top: -17px;
     background-image: url(./Button.svg);
     background-size: 42px 41px;
     height: 41px;
     width: 42px;
+}
+
+.ButtonText {
+    display: none;
+}
+
+
+
+@media (min-width: 600px) {
+    .ButtonText {
+        display: inline;
+    }
+
+    .LoginButton::before {
+        left: -50px;
+        top: -5px;
+    }
 }
