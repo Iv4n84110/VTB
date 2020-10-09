@@ -20,20 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b89c41-bcee-4e33-a2e8-2b682886b2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hoc/Auxiliary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Main/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Page404/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/PageLayout/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/PageLayout/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Modal/Backdrop/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Modal/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/Auxiliary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Auxiliary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Modal/Backdrop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Modal/Backdrop/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Modal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/PageLayout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/PageLayout/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602185562741</updated>
       <workItem from="1602185564430" duration="5284000" />
-      <workItem from="1602227085968" duration="5113000" />
+      <workItem from="1602227085968" duration="12248000" />
     </task>
     <servers />
   </component>

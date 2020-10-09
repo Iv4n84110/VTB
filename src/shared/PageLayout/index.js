@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Aux from '../../hoc/Auxiliary'
 
@@ -7,15 +7,18 @@ import Footer from '../Footer';
 
 import classes from './styles.css';
 
-
 const PageLayout = (props) => {
+
+
     return (
         <Aux>
-            <Header isLogined={props.isLogined}/>
-            <div className={classes.content}>
-                {props.children}
+            <div className='content'>
+                <Header modalHandler={props.modalHandler} />
+                <div  >
+                    {props.children}
+                </div>
+                <Footer/>
             </div>
-            <Footer/>
         </Aux>
     );
 }

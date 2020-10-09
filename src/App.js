@@ -1,19 +1,22 @@
 import React from 'react';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Page404, Main, User } from './pages';
-
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {Main, User, Page404} from './pages';
+import PageLayout from "./shared/PageLayout";
 
 
 function App() {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Main}/>
-                <Route exact path="/user" component={User}/>
-                <Route component={Page404}/>
-            </Switch>
-        </BrowserRouter>
+        <div>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={Main}/>
+                    <Route exact path="/user" component={User}/>
+                    <Route component={Page404}/>
+                </Switch>
+            </BrowserRouter>
+
+        </div>
     );
 }
 

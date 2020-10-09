@@ -1,10 +1,16 @@
-import React from 'react';
+import React from "react";
+import Modal from "../../shared/Modal";
+import PageLayout from "../../shared/PageLayout";
 
 const User = () => {
-    return(
-        <div>
+    return (
+        <PageLayout>
 
-        </div>
+            <Modal>
+            </Modal>
+            <div>user</div>
+
+        </PageLayout>
     )
 
 }
