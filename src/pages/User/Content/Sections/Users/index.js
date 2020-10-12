@@ -18,18 +18,30 @@ const Users = () => {
     }
 
     const tabs = users ? users.map(user => {
-        return <div className={classes.Tab}>
-            Пользователь {user.login}
-        </div>
+            return <div className={classes.Tab}>
+                <div className={classes.ButtonGroup}>
+                    <button className={[classes.Button, classes.Refactor].join(' ')}></button>
+                    <button className={[classes.Button, classes.Cancel].join(' ')}></button>
+                    <button className={[classes.Button, classes.Delete].join(' ')}></button>
+                </div>
+                <span className={classes.LoginText}>{user.login}</span>
+                <span className={classes.FilesText}>{user.files} Файлов</span>
+            </div>
         })
         : null
 
     return (
-        <div className={classes.TabsWrapper}>
-            {tabs}
-            {tabs}
-            {tabs}
+        <div className={classes.Users}>
+            <h1>
+                Пользователи
+            </h1>
+            <div className={classes.TabsWrapper}>
+                {tabs}
+                {tabs}
+                {tabs}
+            </div>
         </div>
+
     )
 
 }

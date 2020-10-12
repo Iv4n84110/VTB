@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b89c41-bcee-4e33-a2e8-2b682886b2fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/cancel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/okay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/refactor.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,21 +56,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/User/Content/Sidebar/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ivan\proj\vtb\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ivan\proj\vtb\src\pages\User\Content\Sections\Users\icons" />
       <recent name="C:\Users\Ivan\proj\vtb\src\pages\User\Content\Sidebar\img" />
       <recent name="C:\Users\Ivan\proj\vtb\src\pages\User\Content\Sections\Offers" />
       <recent name="C:\Users\Ivan\proj\vtb\src\pages\User\Content\Sections\Transfer" />
       <recent name="C:\Users\Ivan\proj\vtb\src\shared\Header\LoginButton" />
-      <recent name="C:\Users\Ivan\proj\vtb\src\shared\Header\Logo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ivan\proj\vtb\src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.server">
@@ -129,7 +135,7 @@
       <workItem from="1602227085968" duration="43331000" />
       <workItem from="1602340307376" duration="611000" />
       <workItem from="1602361604706" duration="2343000" />
-      <workItem from="1602518231353" duration="7471000" />
+      <workItem from="1602518231353" duration="13420000" />
     </task>
     <servers />
   </component>
@@ -153,6 +159,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="725" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602229522024" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602540317125">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602540317125" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602252053157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
