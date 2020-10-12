@@ -1,0 +1,16 @@
+.TabsWrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.Tab {
+    display: flex;
+    background: #F5F5F5;
+    border-radius: 20px;
+    width: 40%;
+}
