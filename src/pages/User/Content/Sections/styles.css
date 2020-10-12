@@ -1,4 +1,5 @@
 .Wrapper {
+    display: flex;
     padding: 58px ;
     flex-grow: 1;
 }

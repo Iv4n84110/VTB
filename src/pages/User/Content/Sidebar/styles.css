@@ -1,7 +1,7 @@
 .Wrapper{
     display: flex;
     flex-direction: column;
-    width: 427px;
+    min-width: 427px;
     height: 528px;
 
     background: #F5F5F5;

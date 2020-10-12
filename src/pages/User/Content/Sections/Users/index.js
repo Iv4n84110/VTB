@@ -18,12 +18,16 @@ const Users = () => {
     }
 
     const tabs = users ? users.map(user => {
-        return <div className={classes.Tab}>{user.login}</div>
+        return <div className={classes.Tab}>
+            Пользователь {user.login}
+        </div>
         })
         : null
 
     return (
         <div className={classes.TabsWrapper}>
+            {tabs}
+            {tabs}
             {tabs}
         </div>
     )
