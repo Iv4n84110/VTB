@@ -13,7 +13,7 @@ const Header = (props) => {
                 <div className={classes.LogoWrapper}>
                     <Logo />
                 </div>
-                <span className={classes.Text}>Хохотон</span>
+                <span className={classes.Text}>{'<I21?70'}</span>
 
                 <LoginButton modalHandler={props.modalHandler}>
                     Личный кабинет

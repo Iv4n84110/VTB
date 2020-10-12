@@ -9,14 +9,14 @@ const Sidebar = () => {
         <div className={classes.Wrapper}>
             <div className={classes.User}>
                 <div className={classes.UserLogo}></div>
-                <span className={classes.UserText}>Логин</span>
+                <span className={classes.UserText}>Админ</span>
             </div>
             <nav className={classes.Navigation}>
-                <NavLink to="/user/offers" className={classes.Link} activeClassName={classes.Selected}>
-                    Предложения
+                <NavLink to="/admin/create" className={classes.Link} activeClassName={classes.Selected}>
+                    Создать пользователя
                 </NavLink>
-                <NavLink to="/user/transfers" className={classes.Link} activeClassName={classes.Selected}>
-                    Переводы
+                <NavLink to="/admin/users" className={classes.Link} activeClassName={classes.Selected}>
+                    Пользователи
                 </NavLink>
             </nav>
         </div>

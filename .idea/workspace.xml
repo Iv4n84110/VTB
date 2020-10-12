@@ -20,26 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b89c41-bcee-4e33-a2e8-2b682886b2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Offers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Offers/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Transfer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Transfer/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/img/User.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Main/SignIn/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/SignIn/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Header/LoginButton/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Header/LoginButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/LoginButton/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Header/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/PageLayout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/PageLayout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Offers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Offers/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Transfer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Transfer/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Create/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sidebar/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Header/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +133,10 @@
       <option name="presentableId" value="Default" />
       <updated>1602185562741</updated>
       <workItem from="1602185564430" duration="5284000" />
-      <workItem from="1602227085968" duration="43183000" />
+      <workItem from="1602227085968" duration="43331000" />
+      <workItem from="1602340307376" duration="611000" />
+      <workItem from="1602361604706" duration="2343000" />
+      <workItem from="1602518231353" duration="2235000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect} from "react-router-dom";
-import Transfer from "./Transfer";
-import Offers from "./Offers";
+import Create from "./Create";
+import Users from "./Users";
 
 import classes from './styles.css'
 
@@ -10,10 +10,10 @@ const Sections = () => {
     return (
         <div className={classes.Wrapper}>
             <Switch>
-                <Route path='/user/transfers' component={Transfer}/>
-                <Route path="/user/offers" component={Offers}/>
+                <Route path='/admin/create' component={Create}/>
+                <Route path="/admin/users" component={Users}/>
                 <Route>
-                    <Redirect to="/user/transfers"/>
+                    <Redirect to="/admin/create"/>
                 </Route>
             </Switch>
         </div>
