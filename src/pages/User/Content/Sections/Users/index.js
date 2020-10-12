@@ -21,6 +21,7 @@ const Users = () => {
         return <div className={classes.Tab}>
             Пользователь {user.login}
         </div>
+
         })
         : null
 
