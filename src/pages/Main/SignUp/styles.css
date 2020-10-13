@@ -64,7 +64,7 @@
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.LoginButton {
+.RegisterButton {
     background: linear-gradient(180deg, #6209EF -16.25%, #1919E0 116.25%);
     border: none;
     border-radius: 40px;
@@ -75,7 +75,7 @@
     line-height: 33px;
     color: #FFFFFF;
 
-    padding: 9px 35px;
+    padding: 7px 35px;
 
 }
 
@@ -91,7 +91,6 @@
     color: #FFFFFF;
 
     padding: 3px 30px;
-
 }
 
 @media (min-width: 750px) {
@@ -118,5 +117,12 @@
     .Form input {
         width: 320px;
     }
+}
 
+@media (max-width: 750px) {
+    .RegisterButton {
+        font-size: 20px;
+        line-height: 30px;
+        padding: 5px 30px;
+    }
 }

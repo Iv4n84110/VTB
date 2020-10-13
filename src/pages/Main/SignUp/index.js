@@ -15,7 +15,7 @@ const SignIn = (props) => {
                             <input placeholder='Логин'></input>
                             <input type='password' placeholder='Пароль'></input>
                             <input type='password' placeholder='Подтвердите пароль'></input>
-                            <button className={classes.LoginButton} type="submit">Зарегестрироваться</button>
+                            <button className={classes.RegisterButton} type="submit">Зарегистрироваться</button>
                             <button className={classes.SwitchButton} type="submit">Войти</button>
                         </div>
                     </fieldset>
