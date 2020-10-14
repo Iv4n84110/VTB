@@ -1,34 +1,32 @@
 import React, {useState, useEffect} from "react";
 
 import classes from './styles.css'
+import User from "./User";
 
 const Users = () => {
 
 
-    const [users, setUsers] = useState(null)
+    const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch("https://run.mocky.io/v3/1b0f1a45-c8dc-441b-b566-00a28a3fd006")
+        fetch("https://run.mocky.io/v3/eed4bc68-7f90-4c4f-985e-da8cd8cfeb3b")
             .then((res) => res.json())
             .then((res) => setUsers(res.users))
     }, [])
 
+    useEffect(() => {
+        console.log(tabs())
 
-    {
-        console.log(users)
-    }
+    }, [users])
 
-    const tabs = users ? users.map(user => {
-            return <div className={classes.Tab}>
-                <div className={classes.ButtonGroup}>
-                    <button className={[classes.Button, classes.Refactor].join(' ')}></button>
-                    <button className={[classes.Button, classes.Cancel].join(' ')}></button>
-                    <button className={[classes.Button, classes.Delete].join(' ')}></button>
-                </div>
-                <span className={classes.LoginText}>{user.login}</span>
-                <span className={classes.FilesText}>{user.files} Файлов</span>
-            </div>
+
+    const tabs = () => {
+        return users.map((user, i) => {
+            return <User user={user}
+                         key ={i}
+                         index={i}
+                         delete={(name) => setUsers(users.filter(item => item.login !== name))}/>
         })
-        : null
+    }
 
     return (
         <div className={classes.Users}>
@@ -36,9 +34,7 @@ const Users = () => {
                 Пользователи
             </h1>
             <div className={classes.TabsWrapper}>
-                {tabs}
-                {tabs}
-                {tabs}
+                {tabs()}
             </div>
         </div>
 
