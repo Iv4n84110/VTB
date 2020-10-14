@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05b89c41-bcee-4e33-a2e8-2b682886b2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/User/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/User/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/cancel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/User/icons/cancel.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/User/icons/delete.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/okay.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/User/icons/okay.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/icons/refactor.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/User/icons/refactor.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Content/Sections/Users/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="05b89c41-bcee-4e33-a2e8-2b682886b2fc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,6 +130,7 @@
       <workItem from="1602361604706" duration="2343000" />
       <workItem from="1602518231353" duration="13579000" />
       <workItem from="1602614127460" duration="15040000" />
+      <workItem from="1602669505317" duration="363000" />
     </task>
     <servers />
   </component>
