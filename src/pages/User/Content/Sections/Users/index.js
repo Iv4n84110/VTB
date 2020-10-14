@@ -18,13 +18,13 @@ const Users = () => {
 
     }, [users])
 
-
     const tabs = () => {
         return users.map((user, i) => {
             return <User user={user}
                          key ={i}
                          index={i}
                          delete={(name) => setUsers(users.filter(item => item.login !== name))}/>
+
         })
     }
 
