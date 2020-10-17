@@ -13,7 +13,11 @@ const PageLayout = (props) => {
     return (
         <Aux>
             <div className={classes.Content}>
-                <Header modalHandler={props.modalHandler}/>
+                <Header 
+                    modalHandler={props.modalHandler} 
+                    redirectToMain={props.redirectToMain} 
+                    redirectToStat={props.redirectToStat} 
+                />
                 {props.children}
                 <Footer/>
             </div>

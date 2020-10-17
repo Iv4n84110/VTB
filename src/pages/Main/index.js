@@ -3,6 +3,7 @@ import Modal from "../../shared/Modal";
 import Aux from "../../hoc/Auxiliary";
 import PageLayout from "../../shared/PageLayout";
 import SignIn from "./SignIn";
+import { Redirect } from "react-router-dom";
 
 const Main = () => {
     const [modal, setModal] = useState(false);
@@ -15,8 +16,15 @@ const Main = () => {
         setModal(false)
     }
 
+    const [ openedStatistics, toggleStatistics ] = useState(false);
+
+    const redirectToStat = () => {
+        toggleStatistics(!openedStatistics);
+    }
+
     return (
-        <PageLayout modalHandler={openModal}>
+        openedStatistics ? <Redirect to="/statistics" /> :
+        <PageLayout modalHandler={openModal} redirectToStat={redirectToStat}>
             <Modal show={modal}  modalClosed={closeModal}>
                 <SignIn modalClosed={closeModal}/>
             </Modal>
