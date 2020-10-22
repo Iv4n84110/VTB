@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 import classes from './styles.css'
 import Logo from "./Logo";
@@ -10,11 +10,12 @@ const Header = (props) => {
     return(
         <header className={classes.Header}>
             <div className={classes.Row}>
-                <div className={classes.LogoWrapper}>
+                <div onClick={props.redirectToMain} className={classes.LogoWrapper}>
                     <Logo />
                 </div>
                 <span className={classes.Text}>{'<I21?70'}</span>
 
+                <div onClick={props.redirectToStat} className={classes.statisticsButton}></div>
                 <LoginButton modalHandler={props.modalHandler}>
                     Личный кабинет
                 </LoginButton>
