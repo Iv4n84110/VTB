@@ -8,7 +8,7 @@ const Users = () => {
 
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch("/user/get-all")
+        fetch("api/user/get-all")
             .then((res) => res.json())
             .then((res) => setUsers(res.users))
     }, [])

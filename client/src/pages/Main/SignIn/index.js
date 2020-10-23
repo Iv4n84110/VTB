@@ -11,8 +11,10 @@ const SignIn = (props) => {
 
   const [error, setError] = useState("");
 
+  const [isAuth, setAuth] = useState(!!localStorage.getItem("token"));
+
   const setLogin = (e) => {
-    setUser({ ...user, email: e.target.value });
+    setUser({ ...user, login: e.target.value });
   };
 
   const setPassword = (e) => {
@@ -39,12 +41,14 @@ const SignIn = (props) => {
           setError(error.message);
         });
     } else {
-      response.json().then((res) => localStorage.setItem("token", res.token));
-      return <Redirect to="/admin/create" />;
+      response.json().then((res) => {
+        localStorage.setItem("token", res.token);
+        setAuth(true);
+      });
     }
   }
 
-  return localStorage.getItem("token") ? (
+  return isAuth ? (
     <Redirect to="/admin/create" />
   ) : (
     <div className={classes.Container}>
