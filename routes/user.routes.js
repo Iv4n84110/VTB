@@ -88,6 +88,7 @@ router.get('/get-all', Auth, isAdmin, async (req, res) => {
 		const transformedUsers = users.map((user) => ({
 			login: user.login,
 			id: user._id,
+			needToChangePassword: user.needToChangePassword,
 		}))
 
 		res.status(200).json(transformedUsers)

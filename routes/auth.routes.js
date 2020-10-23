@@ -39,6 +39,7 @@ router.post(
 
 			const hashedPassword = await bcrypt.hash(password, 12)
 			user.password = hashedPassword
+			user.needToChangePassword = false
 
 			await user.save()
 			res.status(201).json({ message: 'Пароль установлен!' })
