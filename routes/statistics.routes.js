@@ -13,7 +13,7 @@ router.get('/get-users', Auth, isAdmin, async (req, res) => {
 		const users = await User.find()
 
 		const transformedUsers = users.map((user) => ({
-			email: user.email,
+			login: user.login,
 			count: user.crypts.length,
 		}))
 
