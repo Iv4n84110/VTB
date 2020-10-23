@@ -33,7 +33,10 @@ router.post('/delete', Auth, isAdmin, async (req, res) => {
 	}
 })
 
-router.post('/create', Auth, isAdmin,
+router.post(
+	'/create',
+	Auth,
+	isAdmin,
 	[
 		check('login', 'Некорректный login').isLength({
 			min: 3,
@@ -78,5 +81,22 @@ router.post('/create', Auth, isAdmin,
 	}
 )
 
+router.get('/get-all', Auth, isAdmin, async (req, res) => {
+	try {
+		const users = await User.find()
+
+		const transformedUsers = users.map((user) => ({
+			login: user.login,
+			id: user._id,
+		}))
+
+		res.status(200).json(transformedUsers)
+	} catch (e) {
+		console.log(e)
+		res.status(500).json({
+			message: 'Что-то пошло не так, попробуйте снова.',
+		})
+	}
+})
 
 module.exports = router

@@ -85,7 +85,7 @@ router.post(
 				expiresIn: '10h',
 			})
 
-			res.json({
+			res.status(200).json({
 				token,
 				userId: user.id,
 			})

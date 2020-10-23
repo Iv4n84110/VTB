@@ -5,7 +5,6 @@ const router = Router()
 
 router.post('/crypt', cliAuth, async (req, res) => {
 	try {
-		console.log(req.user._id)
 		const user = await User.findOne(req.user._id)
 
 		user.crypts.push({ date: new Date() })
