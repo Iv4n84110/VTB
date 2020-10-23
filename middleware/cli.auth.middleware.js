@@ -7,8 +7,8 @@ module.exports = async (req, res, next) => {
 	}
 
 	try {
-		const { email, password } = req.body
-		const user = await User.findOne({ email })
+		const { login, password } = req.body
+		const user = await User.findOne({ login })
 
 		if (!user) {
 			throw new Error()
