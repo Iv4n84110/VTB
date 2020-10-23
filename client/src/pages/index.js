@@ -1,5 +1,5 @@
 import Main from "./Main";
-import User from "./User";
+import Admin from "./Admin";
 import Page404 from "./Page404";
 
-export {Main, User, Page404}
+export {Main, Admin, Page404}

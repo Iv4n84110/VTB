@@ -1,9 +1,0 @@
-.Content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex-grow: 1;
-    padding: 30px 3%;
-    box-sizing: border-box;
-
-}
