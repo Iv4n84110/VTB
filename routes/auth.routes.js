@@ -11,7 +11,9 @@ const { Types } = require('mongoose')
 router.post(
 	'/register',
 	[
-		check('email', 'Некорректный email').isEmail(),
+		check('login', 'Некорректный login').isLength({
+			min: 3,
+		}),
 		check('password', 'Минимальная длина пароля 6 символов').isLength({
 			min: 6,
 		}),
@@ -25,28 +27,22 @@ router.post(
 					errors: errors.array(),
 					message: 'Некорректные данные при регистрации',
 				})
-			const { email, password } = req.body
-			const candidate = await User.findOne({ email })
 
-			if (candidate)
-				return res.status(400).json({
-					message: 'Такой пользователь уже существует',
+			const { login, password } = req.body
+			const user = await User.findOne({ login })
+
+			if (!user) {
+				return res.status(404).json({
+					message: 'Нет такого пользователя',
 				})
+			}
 
 			const hashedPassword = await bcrypt.hash(password, 12)
-			const sault = crypto.randomBytes(128).toString('base64')
-			const cryptString = crypto.randomBytes(128).toString('base64')
+			user.password = hashedPassword
+			user.needToChangePassword = false
 
-			const newUser = new User({
-				email,
-				password: hashedPassword,
-				sault,
-				cryptString,
-				isAdmin: false,
-			})
-
-			await newUser.save()
-			res.status(201).json({ message: 'Пользователь создан' })
+			await user.save()
+			res.status(201).json({ message: 'Пароль установлен!' })
 		} catch (e) {
 			res.status(500).json({
 				message: 'Что-то пошло не так, попробуйте снова.',
@@ -58,7 +54,7 @@ router.post(
 router.post(
 	'/login',
 	[
-		check('email', 'Введите корректный email').normalizeEmail().isEmail(),
+		check('login', 'Введите корректный login').exists(),
 		check('password', 'Введите пароль').exists(),
 	],
 	async (req, res) => {
@@ -71,8 +67,8 @@ router.post(
 					message: 'Некорректные данные при входе в систему',
 				})
 
-			const { email, password } = req.body
-			const user = await User.findOne({ email })
+			const { login, password } = req.body
+			const user = await User.findOne({ login })
 
 			if (!user)
 				return res.status(400).json({
@@ -90,7 +86,7 @@ router.post(
 				expiresIn: '10h',
 			})
 
-			res.json({
+			res.status(200).json({
 				token,
 				userId: user.id,
 			})
