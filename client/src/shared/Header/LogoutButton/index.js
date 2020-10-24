@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from './styles.css'
 
-const LoginButton = (props) => {
+const LogoutButton = (props) => {
 
     return (
         <button onClick={props.modalHandler} className={classes.LoginButton}>
@@ -12,4 +12,4 @@ const LoginButton = (props) => {
     )
 }
 
-export default LoginButton;
+export default LogoutButton;

@@ -14,6 +14,7 @@ const PageLayout = (props) => {
         <Aux>
             <div className={classes.Content}>
                 <Header 
+                    auth={props.auth}                
                     modalHandler={props.modalHandler} 
                     redirectToMain={props.redirectToMain} 
                     redirectToStat={props.redirectToStat} 
