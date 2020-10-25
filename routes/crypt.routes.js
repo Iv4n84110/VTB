@@ -5,7 +5,13 @@ const router = Router()
 
 router.post('/crypt', cliAuth, async (req, res) => {
 	try {
-		const user = await User.findOne(req.user._id)
+		const user = req.user
+
+		if (!user.isActive) {
+			return res.status(403).json({
+				message: 'Текущий пользователь заблокирован',
+			})
+		}
 
 		user.crypts.push({ date: new Date() })
 

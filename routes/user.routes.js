@@ -33,6 +33,30 @@ router.post('/delete', Auth, isAdmin, async (req, res) => {
 	}
 })
 
+router.post('/block', Auth, isAdmin, async (req, res) => {
+	try {
+		const { id } = req.body
+		const user = await User.findById(id)
+
+		if (!user) {
+			res.status(404).json({
+				message: 'Пользователь не найден',
+			})
+		}
+
+		user.isActive = false;
+
+		await user.save()
+
+		res.status(200);
+	} catch (e) {
+		console.log(e)
+		res.status(500).json({
+			message: 'Что-то пошло не так, попробуйте снова.',
+		})
+	}
+})
+
 router.post(
 	'/create',
 	Auth,
@@ -69,7 +93,7 @@ router.post(
 				cryptString,
 				isAdmin: false,
 				needToChangePassword: true,
-				isActive: false,
+				isActive: true,
 			})
 			await newUser.save()
 			res.status(201).json({ message: 'Пользователь создан' })
@@ -89,6 +113,7 @@ router.get('/get-all', Auth, isAdmin, async (req, res) => {
 			login: user.login,
 			id: user._id,
 			needToChangePassword: user.needToChangePassword,
+			isActive: user.isActive,
 		}))
 
 		res.status(200).json(transformedUsers)
