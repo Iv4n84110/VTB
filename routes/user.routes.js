@@ -149,7 +149,7 @@ router.get('/get-all', Auth, isAdmin, async (req, res) => {
 	}
 })
 
-router.post('/get-info', Auth, isAdmin, async (req, res) => {
+router.get('/get-info', Auth, isAdmin, async (req, res) => {
 	try {
 		const user = await User.findById({ token: req.token })
 
