@@ -44,11 +44,35 @@ router.post('/block', Auth, isAdmin, async (req, res) => {
 			})
 		}
 
-		user.isActive = false;
+		user.isActive = false
 
 		await user.save()
 
-		res.status(200);
+		res.status(200)
+	} catch (e) {
+		console.log(e)
+		res.status(500).json({
+			message: 'Что-то пошло не так, попробуйте снова.',
+		})
+	}
+})
+
+router.post('/unblock', Auth, isAdmin, async (req, res) => {
+	try {
+		const { id } = req.body
+		const user = await User.findById(id)
+
+		if (!user) {
+			res.status(404).json({
+				message: 'Пользователь не найден',
+			})
+		}
+
+		user.isActive = true
+
+		await user.save()
+
+		res.status(200)
 	} catch (e) {
 		console.log(e)
 		res.status(500).json({
