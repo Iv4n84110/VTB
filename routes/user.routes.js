@@ -6,6 +6,7 @@ const User = require('../models/User')
 const Auth = require('../middleware/auth.middleware')
 const isAdmin = require('../middleware/isAdmin.middleware')
 const crypto = require('crypto')
+const jwt = require('jsonwebtoken')
 
 const router = Router()
 
@@ -108,8 +109,10 @@ router.post(
 					message: 'Такой пользователь уже существует',
 				})
 			}
+
 			const sault = crypto.randomBytes(64).toString('base64')
 			const cryptString = crypto.randomBytes(64).toString('base64')
+			const refreshToken = 'test'
 
 			const newUser = new User({
 				login,
@@ -118,10 +121,12 @@ router.post(
 				isAdmin: false,
 				needToChangePassword: true,
 				isActive: true,
+				refreshToken,
 			})
 			await newUser.save()
 			res.status(201).json({ message: 'Пользователь создан' })
 		} catch (e) {
+			console.log(e)
 			res.status(500).json({
 				message: 'Что-то пошло не так, попробуйте снова.',
 			})

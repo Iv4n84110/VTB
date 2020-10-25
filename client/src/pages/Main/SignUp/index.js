@@ -3,7 +3,7 @@ import React from "react";
 import classes from './styles.css';
 
 
-const SignIn = (props) => {
+const SignUp = (props) => {
     return (
         <div className={classes.Container}>
             <button className={classes.CloseButton} onClick={props.modalClosed}></button>
@@ -27,4 +27,4 @@ const SignIn = (props) => {
 
 }
 
-export default SignIn;
+export default SignUp;
