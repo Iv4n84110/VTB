@@ -151,7 +151,7 @@ router.get('/get-all', Auth, isAdmin, async (req, res) => {
 
 router.get('/get-info', Auth, isAdmin, async (req, res) => {
 	try {
-		const user = await User.findById({ token: req.token })
+		const user = await User.findOne({ token: req.token })
 
 		if (!user) {
 			res.status(404).json({
