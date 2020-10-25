@@ -8,7 +8,7 @@ router.post('/crypt', cliAuth, async (req, res) => {
 		const user = req.user
 
 		if (!user.isActive) {
-			return res.status(403).json({
+			return res.status(423).json({
 				message: 'Текущий пользователь заблокирован',
 			})
 		}
