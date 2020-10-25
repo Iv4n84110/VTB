@@ -7,6 +7,8 @@ const router = Router()
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
 const { Types } = require('mongoose')
+const Auth = require('../middleware/auth.middleware')
+const isAdmin = require('../middleware/isAdmin.middleware')
 
 router.post(
 	'/register',
@@ -86,8 +88,21 @@ router.post(
 				expiresIn: '10h',
 			})
 
+			const refreshToken = jwt.sign(
+				{ userId: user.id },
+				config.get('jwtSecret'),
+				{
+					expiresIn: '30d',
+				}
+			)
+
+			user.refreshToken = refreshToken
+
+			await user.save()
+
 			res.status(200).json({
 				token,
+				//refreshToken: refreshToken,
 				userId: user.id,
 			})
 		} catch (e) {
@@ -98,4 +113,38 @@ router.post(
 	}
 )
 
+router.post('/reset-password', Auth, isAdmin, async (req, res) => {
+	try {
+		const { id } = req.body
+		const user = await User.findById(id)
+
+		if (!user) {
+			res.status(404).json({
+				message: 'Пользователь не найден',
+			})
+		}
+
+		user.needToChangePassword = true
+
+		await user.save()
+
+		res.status(200).json({
+			message: `У пользователя ${user.login} был успешно сброшен пароль!`,
+		})
+	} catch (e) {
+		console.log(e)
+		res.status(500).json({
+			message: 'Что-то пошло не так, попробуйте снова.',
+		})
+	}
+})
+
+/*
+router.post('/refresh-token', Auth, isAdmin, async (req, res) => {
+	try {
+		
+
+	} catch (e) {}
+})
+*/
 module.exports = router
