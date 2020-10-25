@@ -14,9 +14,17 @@ module.exports = (req, res, next) => {
 
 		const decoded = jwt.verify(token, config.get('jwtSecret'))
 
-		req.user = decoded;
+		req.user = decoded
 		next()
 	} catch (e) {
+		/*
+		if (e && e.name === 'TokenExpiredError') {
+			return res
+				.cookie('access-token', 'expired')
+				.status(401)
+				.json({ message: 'Нет аутентификации' })
+		}
+		*/
 		res.status(401).json({ message: 'Нет аутентификации' })
 	}
 }
