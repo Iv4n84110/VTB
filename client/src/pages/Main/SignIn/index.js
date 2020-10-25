@@ -61,7 +61,7 @@ const SignIn = (props) => {
           <fieldset>
             <div className={classes.Inner}>
               <legend>Вход</legend>
-              <input placeholder="Почта" onChange={setLogin}></input>
+              <input placeholder="Логин" onChange={setLogin}></input>
               <input
                 type="password"
                 onChange={setPassword}
