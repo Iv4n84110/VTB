@@ -151,7 +151,6 @@ router.get('/get-all', Auth, isAdmin, async (req, res) => {
 
 router.get('/get-info', Auth, isAdmin, async (req, res) => {
 	try {
-		console.log(req.user)
 		const user = await User.findById(req.user.id)
 
 		if (!user) {
@@ -164,7 +163,6 @@ router.get('/get-info', Auth, isAdmin, async (req, res) => {
 			login: user.login,
 		})
 	} catch (e) {
-		console.log(e)
 		res.status(500).json({
 			message: 'Что-то пошло не так, попробуйте снова.',
 		})
