@@ -149,4 +149,24 @@ router.get('/get-all', Auth, isAdmin, async (req, res) => {
 	}
 })
 
+router.post('/get-info', Auth, isAdmin, async (req, res) => {
+	try {
+		const user = await User.findById({ token: req.token })
+
+		if (!user) {
+			res.status(404).json({
+				message: 'Пользователь не найден',
+			})
+		}
+
+		res.status(200).json({
+			login: user.login,
+		})
+	} catch (e) {
+		console.log(e)
+		res.status(500).json({
+			message: 'Что-то пошло не так, попробуйте снова.',
+		})
+	}
+})
 module.exports = router
