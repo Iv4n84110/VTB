@@ -147,6 +147,7 @@ router.get('/get-all', Auth, isAdmin, async (req, res) => {
 			id: user._id,
 			needToChangePassword: user.needToChangePassword,
 			isActive: user.isActive,
+			count: user.crypts.length,
 		}))
 
 		res.status(200).json(transformedUsers)
