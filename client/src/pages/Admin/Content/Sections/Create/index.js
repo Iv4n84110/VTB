@@ -8,13 +8,13 @@ const Create = () => {
   const [error, setError] = useState("");
   const myToken = localStorage.getItem("token");
 
-
   async function create(e) {
     e.preventDefault();
     const response = await fetch("/api/user/create", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${myToken}`,
+        "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify(login),
     });
