@@ -15,7 +15,7 @@ module.exports = async (req, res, next) => {
 		}
 
 		if (user.needToChangePassword) {
-			return res.status(403);
+			return res.status(403).json()
 		}
 
 		const isMatch = await bcrypt.compare(password, user.password)
