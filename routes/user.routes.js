@@ -136,7 +136,7 @@ router.post(
 
 router.get('/get-all', Auth, isAdmin, async (req, res) => {
 	try {
-		const users = await User.find()
+		const users = await User.find().where('isAdmin').equals(false)
 
 		const transformedUsers = users.map((user) => ({
 			login: user.login,
