@@ -49,7 +49,9 @@ router.post('/block', Auth, isAdmin, async (req, res) => {
 
 		await user.save()
 
-		res.status(200)
+		res.status(200).json({
+			message: `${user.login} был успешно заблокирован`,
+		})
 	} catch (e) {
 		console.log(e)
 		res.status(500).json({
@@ -64,7 +66,7 @@ router.post('/unblock', Auth, isAdmin, async (req, res) => {
 		const user = await User.findById(id)
 
 		if (!user) {
-			res.status(404).json({
+			return res.status(404).json({
 				message: 'Пользователь не найден',
 			})
 		}
@@ -73,7 +75,9 @@ router.post('/unblock', Auth, isAdmin, async (req, res) => {
 
 		await user.save()
 
-		res.status(200)
+		res.status(200).json({
+			message: `${user.login} был успешно разблокирован`,
+		})
 	} catch (e) {
 		console.log(e)
 		res.status(500).json({
@@ -136,13 +140,14 @@ router.post(
 
 router.get('/get-all', Auth, isAdmin, async (req, res) => {
 	try {
-		const users = await User.find()
+		const users = await User.find().where('isAdmin').equals(false)
 
 		const transformedUsers = users.map((user) => ({
 			login: user.login,
 			id: user._id,
 			needToChangePassword: user.needToChangePassword,
 			isActive: user.isActive,
+			count: user.crypts.length,
 		}))
 
 		res.status(200).json(transformedUsers)

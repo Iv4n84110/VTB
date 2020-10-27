@@ -27,15 +27,22 @@ router.post(
 			if (!errors.isEmpty())
 				return res.status(400).json({
 					errors: errors.array(),
-					message: 'Некорректные данные при регистрации',
+					message: 'Некорректные данные',
 				})
 
 			const { login, password } = req.body
 			const user = await User.findOne({ login })
 
-			if (!user) {
-				return res.status(404).json({
-					message: 'Нет такого пользователя',
+			if (!user || !user.needToChangePassword) {
+				return res.status(404).json()
+			}
+
+			const isTheSamePassword = await bcrypt.compare(password, user.password)
+
+			if (isTheSamePassword) {
+				return res.status(400).json({
+					message:
+						'Введенный пароль совпадает с предыдущим. Сгенерируйте, пожалуйста, новый пароль',
 				})
 			}
 
@@ -72,7 +79,7 @@ router.post(
 			const { login, password } = req.body
 			const user = await User.findOne({ login })
 
-			if (!user)
+			if (!user || !user.isAdmin)
 				return res.status(400).json({
 					message: 'Ошибка в логине или пароле. Попробуйте, пожалуйста, снова',
 				})
