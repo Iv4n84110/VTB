@@ -14,6 +14,13 @@ module.exports = async (req, res, next) => {
 			throw new Error()
 		}
 
+		if (user.needToChangePassword) {
+			return res.status(403).json({
+				message:
+					'Ваш пароль был сброшен. Установите, пожалуйста, новый и продолжите работу',
+			})
+		}
+
 		const isMatch = await bcrypt.compare(password, user.password)
 
 		if (!isMatch) {

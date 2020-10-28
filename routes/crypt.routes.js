@@ -13,13 +13,6 @@ router.post('/crypt', cliAuth, async (req, res) => {
 			})
 		}
 
-		if (user.needToChangePassword) {
-			return res.status(403).json({
-				message:
-					'Ваш пароль был сброшен. Установите, пожалуйста, новый и продолжите работу',
-			})
-		}
-
 		user.crypts.push({ date: new Date() })
 
 		await user.save()
