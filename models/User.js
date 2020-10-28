@@ -2,7 +2,7 @@ const { Schema, model, Types } = require('mongoose')
 
 const shema = new Schema({
 	login: { type: String, required: true, unique: true },
-	password: { type: String },
+	password: { type: String, required: true },
 	sault: { type: String, required: true, unique: true },
 	cryptString: { type: String, required: true, unique: true },
 	crypts: [{ date: Date }],
