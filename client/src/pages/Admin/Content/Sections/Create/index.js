@@ -6,6 +6,7 @@ import classes from "./styles.css";
 const Create = () => {
   const [login, setLogin] = useState({ login: "" });
   const [error, setError] = useState("");
+  const [isSucsess, setSucsess] = useState(false);
   const myToken = localStorage.getItem("token");
 
   async function create(e) {
@@ -23,12 +24,13 @@ const Create = () => {
         .json()
         .then((res) => res.message)
         .then((res) => {
+          setSucsess(false);
           throw new Error(res);
         })
         .catch((error) => {
           setError(error.message);
         });
-    }
+    } else setSucsess(true);
   }
 
   const handleChange = (e) => {
@@ -48,7 +50,7 @@ const Create = () => {
             Отправить
           </button>
         </div>
-        <div>{error}</div>
+        <div>{isSucsess ? "Пользователь успешно создан!" : error}</div>
       </form>
     </div>
   );

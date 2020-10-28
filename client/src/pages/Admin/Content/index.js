@@ -7,9 +7,15 @@ import classes from "./styles.css";
 
 const Content = () => {
   const [login, setLogin] = useState("");
+  const myToken = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch("https://run.mocky.io/v3/679dcd56-2180-46a1-91dd-7b9d74cf4da5")
+    fetch("/api/user/get-info", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${myToken}`,
+      },
+    })
       .then((res) => res.json())
       .then((res) => setLogin(res.login));
   });
