@@ -15,15 +15,8 @@ const Main = () => {
         setModal(false)
     }
 
-    const [ openedStatistics, toggleStatistics ] = useState(false);
-
-    const redirectToStat = () => {
-        toggleStatistics(!openedStatistics);
-    }
-
     return (
-        openedStatistics ? <Redirect to="/statistics" /> :
-        <PageLayout modalHandler={openModal} redirectToStat={redirectToStat} auth={false}>
+        <PageLayout modalHandler={openModal} auth={false}>
             <Modal show={modal}  modalClosed={closeModal}>
                 <SignIn modalClosed={closeModal}/>
             </Modal>

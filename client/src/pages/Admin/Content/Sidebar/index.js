@@ -18,6 +18,9 @@ const Sidebar = (props) => {
                 <NavLink to="/admin/users" className={classes.Link} activeClassName={classes.Selected}>
                     Пользователи
                 </NavLink>
+                <NavLink to="/admin/statistics" className={classes.Link} activeClassName={classes.Selected}>
+                    Статистика
+                </NavLink>
             </nav>
         </div>
 

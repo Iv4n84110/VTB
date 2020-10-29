@@ -16,8 +16,7 @@ const PageLayout = (props) => {
                 <Header 
                     auth={props.auth}                
                     modalHandler={props.modalHandler} 
-                    redirectToMain={props.redirectToMain} 
-                    redirectToStat={props.redirectToStat} 
+                    redirectToMain={props.redirectToMain}
                 />
                 {props.children}
                 <Footer/>

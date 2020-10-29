@@ -14,10 +14,6 @@ const Header = (props) => {
         </div>
         <span className={classes.Text}>{"<I21?70"}</span>
 
-        <div
-          onClick={props.redirectToStat}
-          className={classes.statisticsButton}
-        ></div>
         {props.auth ? (
           <LogoutButton modalHandler={props.modalHandler}>
             Выйти
