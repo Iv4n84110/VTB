@@ -124,7 +124,7 @@ router.post(
 				cryptString,
 				isAdmin: false,
 				needToChangePassword: true,
-				password: '',
+				password: 'test',
 				isActive: true,
 				refreshToken,
 			})
