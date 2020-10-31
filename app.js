@@ -3,6 +3,7 @@ const config = require('config')
 const mongoose = require('mongoose')
 const path = require('path')
 const app = express()
+const cookieParser = require('cookie-parser')
 
 app.use(express.json({ extended: true }))
 ;(async function start() {
@@ -23,6 +24,7 @@ app.use(express.json({ extended: true }))
 		process.exit(1)
 	}
 })()
+app.use(cookieParser())
 
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api', require('./routes/crypt.routes'))
