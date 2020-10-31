@@ -2,5 +2,16 @@
 	"port": 51115,
 	"jwtSecret": "elpix shortlist proj yo",
 	"mongoUrl": "mongodb+srv://eldar:qqr1299-fefwe-0FDV-04Vsfdf-SF0V5-d00dvOGT@cluster0.lxqar.azure.mongodb.net/app?retryWrites=true&w=majority",
-	"baseUrl": "http://localhost:500"
+	"baseUrl": "http://localhost:500",
+	"siteIp": "84.38.181.216",
+	"jwt": {
+		"access": {
+			"type": "access",
+			"expiresIn": "1m"
+		},
+		"refresh": {
+			"type": "refresh",
+			"expiresIn": "10d"
+		}
+	}
 }
