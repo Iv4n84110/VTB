@@ -1,23 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import {Main, Admin, Page404} from './pages';
+import { BrowserRouter } from "react-router-dom";
+import { useRoutes, Auth, AuthContext } from "./utils";
 
 function App() {
+  const { token, login, logout } = Auth();
+  const isAuthenticated = !!token;
+  const routes = useRoutes(isAuthenticated);
 
-    return (
-        <div>
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={Main}/>
-                    <Route exact path="/admin/:params" component={Admin}/>
-                    <Route component={Page404}/>
-                </Switch>
-            </BrowserRouter>
-
-        </div>
-    );
+  return (
+    <AuthContext.Provider
+      value={{
+        token,
+        login,
+        logout,
+        isAuthenticated,
+      }}
+    >
+      <BrowserRouter>{routes}</BrowserRouter>
+    </AuthContext.Provider>
+  );
 }
-
 
 export default App;

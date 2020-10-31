@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-
+import React, { useState, useContext } from "react";
+import { fetchRequest, AuthContext } from "../../../utils";
 import classes from "./styles.css";
 
 const SignIn = (props) => {
@@ -11,7 +10,7 @@ const SignIn = (props) => {
 
   const [error, setError] = useState("");
 
-  const [isAuth, setAuth] = useState(!!localStorage.getItem("token"));
+  const auth = useContext(AuthContext);
 
   const setLogin = (e) => {
     setUser({ ...user, login: e.target.value });
@@ -21,36 +20,27 @@ const SignIn = (props) => {
     setUser({ ...user, password: e.target.value });
   };
 
-  async function auth(e) {
+  const responseHandler = (response) => {
+    auth.login(response.token);
+  };
+
+  const rejectHandler = (reject) => {
+    setError(reject.message);
+  };
+
+  function authHandler(e) {
     e.preventDefault();
-    const response = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(user),
-    });
-    if (!response.ok) {
-      response
-        .json()
-        .then((res) => res.message)
-        .then((res) => {
-          throw new Error(res);
-        })
-        .catch((error) => {
-          setError(error.message);
-        });
-    } else {
-      response.json().then((res) => {
-        localStorage.setItem("token", res.token);
-        setAuth(true);
-      });
-    }
+    fetchRequest(
+      "/api/auth/login",
+      rejectHandler,
+      responseHandler,
+      { "Content-Type": "application/json;charset=utf-8" },
+      "POST",
+      user
+    );
   }
 
-  return isAuth ? (
-    <Redirect to="/admin/create" />
-  ) : (
+  return (
     <div className={classes.Container}>
       <button
         className={classes.CloseButton}
@@ -69,7 +59,7 @@ const SignIn = (props) => {
               ></input>
               <button
                 className={classes.LoginButton}
-                onClick={auth}
+                onClick={authHandler}
                 type="submit"
               >
                 Войти

@@ -1,30 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Sections from "./Sections";
 import Sidebar from "./Sidebar";
-import { Redirect } from "react-router-dom";
+import { fetchRequest, AuthContext } from "../../../utils";
+
 
 import classes from "./styles.css";
 
 const Content = () => {
-  const [login, setLogin] = useState("");
-  const myToken = localStorage.getItem("token");
+  const [adminLogin, setLogin] = useState("");
+  const auth = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
+
+  const responseHandler = (response) => {
+    setLogin(response.login);
+  };
+
+  const rejectHandler = (response) => {
+    if (response === 401) {
+      auth.logout();
+    }
+  };
 
   useEffect(() => {
-    fetch("/api/user/get-info", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${myToken}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => setLogin(res.login));
-  });
+    fetchRequest(
+      "/api/user/get-info",
+      rejectHandler,
+      responseHandler,
+      { Authorization: `Bearer ${token}` },
+      "GET"
+    );
+  }, []);
 
-  return !localStorage.getItem("token") ? (
-    <Redirect to="/" />
-  ) : (
+  return (
     <main className={classes.Content}>
-      <Sidebar login={login}></Sidebar>
+      <Sidebar login={adminLogin}></Sidebar>
       <Sections></Sections>
     </main>
   );

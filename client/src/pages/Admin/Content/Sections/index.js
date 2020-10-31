@@ -15,7 +15,7 @@ const Sections = () => {
                 <Route path="/admin/users" component={Users}/>
                 <Route path="/admin/statistics" component={Statistics}/>
                 <Route>
-                    <Redirect to="/admin/create"/>
+                    <Redirect to="admin/create"/>
                 </Route>
             </Switch>
         </div>

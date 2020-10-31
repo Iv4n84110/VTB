@@ -1,20 +1,17 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../utils";
 
 import classes from "./styles.css";
 
 const SignOut = (props) => {
-  const [isAuth, setAuth] = useState(!!localStorage.getItem("token"));
+  const auth = useContext(AuthContext);
 
   const logoutHandler = (e) => {
     e.preventDefault();
-    localStorage.removeItem("token");
-    setAuth(false);
+    auth.logout();
   };
 
-  return !isAuth ? (
-    <Redirect to="/" />
-  ) : (
+  return (
     <div className={classes.Container}>
       <button
         className={classes.CloseButton}

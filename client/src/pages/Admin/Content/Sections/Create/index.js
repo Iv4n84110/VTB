@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext, fetchRequest } from "../../../../../utils";
 
 import classes from "./styles.css";
 
@@ -7,30 +8,34 @@ const Create = () => {
   const [login, setLogin] = useState({ login: "" });
   const [error, setError] = useState("");
   const [isSucsess, setSucsess] = useState(false);
-  const myToken = localStorage.getItem("token");
+  const auth = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
 
-  async function create(e) {
+  const rejectHandler = (response) => {
+    if (response === 401) {
+      auth.logout();
+    }
+    setError(response.message);
+    setSucsess(false);
+  };
+
+  const responseHandler = (response) => {
+    setSucsess(true);
+  };
+
+  function createHandler(e) {
     e.preventDefault();
-    const response = await fetch("/api/user/create", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${myToken}`,
+    fetchRequest(
+      "/api/user/create",
+      rejectHandler,
+      responseHandler,
+      {
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify(login),
-    });
-    if (!response.ok) {
-      response
-        .json()
-        .then((res) => res.message)
-        .then((res) => {
-          setSucsess(false);
-          throw new Error(res);
-        })
-        .catch((error) => {
-          setError(error.message);
-        });
-    } else setSucsess(true);
+      "POST",
+      login
+    );
   }
 
   const handleChange = (e) => {
@@ -46,7 +51,7 @@ const Create = () => {
             <label>Логин</label>
             <input onChange={handleChange} />
           </div>
-          <button type="submit" onClick={create}>
+          <button type="submit" onClick={createHandler}>
             Отправить
           </button>
         </div>

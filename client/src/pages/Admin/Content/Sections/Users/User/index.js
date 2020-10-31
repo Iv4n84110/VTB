@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { fetchRequest, AuthContext } from "../../../../../../utils";
 
 import classes from "./styles.css";
 
 const User = (props) => {
-  const [user, setUser] = useState({
-    files: props.user.count,
-    login: props.user.login,
-    active: props.user.isActive,
-    chagePassword: props.user.needToChangePassword,
-    id: props.user.id,
-    index: props.index,
-  });
-  const myToken = localStorage.getItem("token");
+  const [user, setUser] = useState({});
   const [error, setError] = useState("");
+  const { token } = useContext(AuthContext);
+  const auth = useContext(AuthContext);
+
 
   useEffect(() => {
     setUser({
@@ -25,51 +21,47 @@ const User = (props) => {
     });
   }, [props]);
 
-  async function setUserActivity() {
-    const response = await fetch(
-      `/api/user/${user.active ? "block" : "unblock"}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${myToken}`,
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({ id: user.id }),
-      }
-    );
-    if (!response.ok) {
-      response
-        .json()
-        .then((res) => res.message)
-        .then((res) => {
-          throw new Error(res);
-        })
-        .catch((error) => {
-          setError(error.message);
-        });
-    } else setUser({ ...user, active: !user.active });
-  }
+  const rejectHandler = (response) => {
+    if (response === 401) {
+      auth.logout();
+    }
+    setError(error.message);
+  };
 
-  async function managePass() {
-    const response = await fetch("/api/auth/reset-password", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${myToken}`,
+  const activityResponse = () => {
+    setUser({ ...user, active: !user.active });
+  };
+
+  const passResponse = () => {
+    setUser({ ...user, chagePassword: true });
+  };
+
+  function setUserActivity() {
+    fetchRequest(
+      `/api/user/${user.active ? "block" : "unblock"}`,
+      rejectHandler,
+      activityResponse,
+      {
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify({ id: user.id }),
-    });
-    if (!response.ok) {
-      response
-        .json()
-        .then((res) => res.message)
-        .then((res) => {
-          throw new Error(res);
-        })
-        .catch((error) => {
-          setError(error.message);
-        });
-    } else setUser({ ...user, chagePassword: true });
+      "POST",
+      { id: user.id }
+    );
+  }
+
+  function managePass() {
+    fetchRequest(
+      "/api/auth/reset-password",
+      rejectHandler,
+      passResponse,
+      {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      "POST",
+      { id: user.id }
+    );
   }
 
   const firstButton = user.active ? classes.Okay : classes.Cancel;

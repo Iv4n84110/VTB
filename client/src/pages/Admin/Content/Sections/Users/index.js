@@ -1,44 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { fetchRequest, AuthContext } from "../../../../../utils";
 
 import classes from "./styles.css";
 import User from "./User";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const [error, setError] = useState("");
-  const myToken = localStorage.getItem("token");
+  const auth = useContext(AuthContext);
+
+  const { token } = useContext(AuthContext);
+
+  const rejectHandler = (response) => {
+    if (response === 401) {
+      auth.logout();
+    }
+  };
+
+  const responseHandler = (response) => {
+    setUsers(response);
+  };
+
+  const deleteHandler = (name) => {
+    setUsers(users.filter((item) => item.login !== name));
+  };
 
   useEffect(() => {
-    fetch("/api/user/get-all", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${myToken}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => setUsers(res));
+    fetchRequest("/api/user/get-all", rejectHandler, responseHandler, {
+      Authorization: `Bearer ${token}`,
+    });
   }, []);
 
-  async function deleteUser(name, id) {
-    const response = await fetch("/api/user/delete", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${myToken}`,
+  function deleteUser(name, id) {
+    fetchRequest(
+      "/api/user/delete",
+      rejectHandler,
+      () => deleteHandler(name),
+      {
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify({ id: id }),
-    });
-    if (!response.ok) {
-      response
-        .json()
-        .then((res) => res.message)
-        .then((res) => {
-          throw new Error(res);
-        })
-        .catch((error) => {
-          setError(error.message);
-        });
-    } else setUsers(users.filter((item) => item.login !== name));
+      "POST",
+      { id: id }
+    );
   }
 
   const tabs = () => {
