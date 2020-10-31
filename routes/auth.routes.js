@@ -9,9 +9,58 @@ const crypto = require('crypto')
 const { Types } = require('mongoose')
 const Auth = require('../middleware/auth.middleware')
 const isAdmin = require('../middleware/isAdmin.middleware')
+const authHelper = require('../helpers/auth.helper')
+const Token = require('../models/Token')
+
+const updateTokens = (userId) => {
+	const accessToken = authHelper.generateAccessToken(userId)
+	const refreshToken = authHelper.generateRefreshToken()
+
+	return authHelper.replaceDbRefreshToken(refreshToken.id, userId).then(() => ({
+		accessToken,
+		refreshToken: refreshToken.token,
+	}))
+}
+
+function setRefreshTokenCookie(refreshToken) {
+	res.cookie('refreshToken', refreshToken, {
+		httpOnly: true,
+		path: '/api/auth',
+		secure: false,
+	})
+}
+
+router.get('/refresh-token', async (req, res) => {
+	try {
+		const { refreshToken } = req.cookies
+		const payload = jwt.verify(refreshToken, config.get('jwtSecret'))
+
+		if (payload.type !== config.get('jwt.refresh.type')) {
+			return res.status(400).json({ message: 'Invalid sended token!' })
+		}
+
+		const token = await Token.findOne({ tokenId: payload.id })
+
+		if (!token) {
+			return res.status(400).json({ message: 'Invalid token!' })
+		}
+
+		const newTokens = await updateTokens(token.userId)
+
+		setRefreshTokenCookie(newTokens.refreshToken);
+		res.clearCookie('access-token')
+		res.status(200).json({
+			token: newTokens.accessToken,
+		})
+	} catch (e) {
+		res.status(500).json({
+			message: 'Что-то пошло не так, попробуйте снова.',
+		})
+	}
+})
 
 router.post(
-	'/register',
+	'/set-password',
 	[
 		check('login', 'Некорректный login').isLength({
 			min: 3,
@@ -91,24 +140,10 @@ router.post(
 					message: 'Ошибка в логине или пароле. Попробуйте, пожалуйста, снова',
 				})
 
-			const token = jwt.sign({ userId: user.id }, config.get('jwtSecret'), {
-				expiresIn: '10h',
-			})
-
-			const refreshToken = jwt.sign(
-				{ userId: user.id },
-				config.get('jwtSecret'),
-				{
-					expiresIn: '30d',
-				}
-			)
-
-			user.refreshToken = refreshToken
-
-			await user.save()
-
+			const tokens = await updateTokens(user.id)
+			setRefreshTokenCookie(tokens.refreshToken);
 			res.status(200).json({
-				token,
+				token: tokens.accessToken,
 				//refreshToken: refreshToken,
 				userId: user.id,
 			})
