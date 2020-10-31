@@ -17,14 +17,11 @@ module.exports = (req, res, next) => {
 		req.user = decoded
 		next()
 	} catch (e) {
-		/*
-		if (e && e.name === 'TokenExpiredError') {
-			return res
-				.cookie('access-token', 'expired')
-				.status(401)
-				.json({ message: 'Нет аутентификации' })
+		if (e instanceof jwt.TokenExpiredError) {
+			res.setHeader('access-token', 'expired')
+			return res.status(401).json()
 		}
-		*/
+
 		res.status(401).json({ message: 'Нет аутентификации' })
 	}
 }
