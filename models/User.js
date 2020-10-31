@@ -9,7 +9,6 @@ const shema = new Schema({
 	isAdmin: { type: Boolean, required: true },
 	needToChangePassword: { type: Boolean, required: true },
 	isActive: { type: Boolean, required: true },
-	refreshToken: { type: String, required: true },
 })
 
 module.exports = model('User', shema)

@@ -116,7 +116,6 @@ router.post(
 
 			const sault = crypto.randomBytes(64).toString('base64')
 			const cryptString = crypto.randomBytes(64).toString('base64')
-			const refreshToken = 'test'
 
 			const newUser = new User({
 				login,
@@ -126,7 +125,6 @@ router.post(
 				needToChangePassword: true,
 				password: 'test',
 				isActive: true,
-				refreshToken,
 			})
 			await newUser.save()
 			res.status(201).json({ message: 'Пользователь создан' })
