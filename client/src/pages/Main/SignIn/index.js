@@ -42,10 +42,6 @@ const SignIn = (props) => {
 
   return (
     <div className={classes.Container}>
-      <button
-        className={classes.CloseButton}
-        onClick={props.modalClosed}
-      ></button>
       <div className={classes.Form}>
         <form>
           <fieldset>

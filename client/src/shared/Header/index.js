@@ -12,7 +12,7 @@ const Header = (props) => {
         <div onClick={props.redirectToMain} className={classes.LogoWrapper}>
           <Logo />
         </div>
-        <span className={classes.Text}>{"<I21?70"}</span>
+        <span className={classes.Text}>{"MV ULT"}</span>
 
         {props.auth ? (
           <LogoutButton modalHandler={props.modalHandler}>
@@ -20,7 +20,7 @@ const Header = (props) => {
           </LogoutButton>
         ) : (
           <LoginButton modalHandler={props.modalHandler}>
-            Личный кабинет
+            Вход в личный кабинет
           </LoginButton>
         )}
       </div>
