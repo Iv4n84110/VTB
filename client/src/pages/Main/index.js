@@ -21,10 +21,7 @@ const Main = () => {
   return (
     !isAuthenticated && (
       <PageLayout modalHandler={openModal} auth={false}>
-        <Modal show={modal} modalClosed={closeModal}>
-          <SignIn modalClosed={closeModal} />
-        </Modal>
-        <div>main</div>
+        <SignIn />
       </PageLayout>
     )
   );
