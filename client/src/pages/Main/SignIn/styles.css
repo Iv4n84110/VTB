@@ -1,0 +1,107 @@
+.Container {
+    background-image: url(./img/bg.jpg);
+    background-size: 600px 800px;
+    height: 450px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 230px;
+}
+
+.CloseButton {
+    align-self: flex-end;
+    background-image: url(./img/Cross.svg);
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.Form form {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.Form fieldset {
+    border: none;
+    flex-grow: 1;
+    height: 70%;
+}
+
+.Inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80%
+}
+
+.Form legend {
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Form input {
+    padding: 10px 10px;
+    outline: none;
+    font-size: 15px;
+    width: 90%;
+    border: 0.1px solid #C7C7C7;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.LoginButton {
+    background: linear-gradient(180deg, #6209EF -16.25%, #1919E0 116.25%);
+    border: none;
+    border-radius: 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFFFFF;
+
+    padding: 9px 35px;
+
+}
+
+@media (min-width: 750px) {
+    .Container {
+        background-size: 600px 800px;
+        width: 550px;
+        height: 700px;
+    }
+
+    .CloseButton {
+        background-size: 25px 25px;
+        height: 25px;
+        width: 25px;
+    }
+
+    .Form legend {
+        font-size: 28px;
+    }
+
+    .Form fieldset {
+        height: 62%;
+    }
+
+    .Form input {
+        width: 320px;
+    }
+
+}
